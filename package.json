@@ -1,0 +1,23 @@
+{
+  "name": "songrequesterapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mitsuriou/SongRequesterAPI.git"
+  },
+  "author": "Mitsuriou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mitsuriou/SongRequesterAPI/issues"
+  },
+  "homepage": "https://github.com/Mitsuriou/SongRequesterAPI#readme",
+  "dependencies": {
+    "mariadb": "^2.5.2",
+    "pg": "^8.5.1"
+  }
+}
