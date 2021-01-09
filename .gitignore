@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-# Connnection variables and data
-connection_strings.js
+# Database connnection's identifiers
+database_identifiers.js
