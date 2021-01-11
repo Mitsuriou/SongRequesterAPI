@@ -1,22 +1,29 @@
 // Modules import
-const postgresql = require('pg');
+const postgresql = require("pg");
+const { database } = require("./database_identifiers.js");
 
 // Local files import
-const IDENTIFIERS = require('./database_identifiers.js');
-
-// Global constants and variables
-const CONNECTION_STRING = 'postgres://' + IDENTIFIERS.id + ':' + IDENTIFIERS.password
-    +'@' + IDENTIFIERS.ip + ':' + IDENTIFIERS.port + '/' + IDENTIFIERS.database;
+const IDENTIFIERS = require("./database_identifiers.js");
 
 // SQL requests
 const SQL_BASIC_REQUEST = "SELECT * FROM sr.user;";
 
-exports.listUsers = async function() {
-    const lDatabase = new postgresql.Client(CONNECTION_STRING);
+// Exported functions (ASYNC calls)
+exports.listUsers = async function () {
+  const lDatabase = new postgresql.Client({
+    user: IDENTIFIERS.id,
+    password: IDENTIFIERS.password,
+    host: IDENTIFIERS.ip,
+    port: IDENTIFIERS.port,
+    client_encoding: "UTF8",
+    database: IDENTIFIERS.database,
+  });
 
-    await lDatabase.connect();
-    var lUsersList = await lDatabase.query(SQL_BASIC_REQUEST);
-    await lDatabase.end();
+  await lDatabase.connect();
+  var lUsersList = await lDatabase.query(SQL_BASIC_REQUEST);
+  await lDatabase.end();
 
-    return lUsersList.rows;
+    console.log(lUsersList.rows);
+    
+  return lUsersList.rows;
 };
