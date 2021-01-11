@@ -4,7 +4,8 @@
   "description": "",
   "main": "api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "nodemon": "nodemon api.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,11 @@
   },
   "homepage": "https://github.com/Mitsuriou/SongRequesterAPI#readme",
   "dependencies": {
-    "mariadb": "^2.5.2",
+    "bcrypt": "^5.0.0",
     "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
   }
 }
