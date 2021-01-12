@@ -1,12 +1,11 @@
 // Modules import
-const postgresql = require("pg");
-const { database } = require("./database_identifiers.js");
+const postgresql = require('pg');
 
 // Local files import
-const IDENTIFIERS = require("./database_identifiers.js");
+const IDENTIFIERS = require('./database_identifiers.js');
 
 // SQL requests
-const SQL_BASIC_REQUEST = "SELECT * FROM sr.user;";
+const SQL_BASIC_REQUEST = 'SELECT * FROM sr.user;';
 
 // Exported functions (ASYNC calls)
 exports.listUsers = async function () {
@@ -15,7 +14,7 @@ exports.listUsers = async function () {
     password: IDENTIFIERS.password,
     host: IDENTIFIERS.ip,
     port: IDENTIFIERS.port,
-    client_encoding: "UTF8",
+    client_encoding: 'UTF8',
     database: IDENTIFIERS.database,
   });
 
@@ -23,7 +22,7 @@ exports.listUsers = async function () {
   var lUsersList = await lDatabase.query(SQL_BASIC_REQUEST);
   await lDatabase.end();
 
-    console.log(lUsersList.rows);
-    
+  console.log(lUsersList.rows);
+
   return lUsersList.rows;
 };
