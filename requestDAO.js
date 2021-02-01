@@ -22,7 +22,5 @@ exports.listUsers = async function () {
   var lUsersList = await lDatabase.query(SQL_BASIC_REQUEST);
   await lDatabase.end();
 
-  console.log(lUsersList.rows);
-
   return lUsersList.rows;
 };

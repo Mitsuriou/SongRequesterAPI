@@ -9,9 +9,11 @@
     "plugin:node/recommended",
     "plugin:promise/recommended",
     "plugin:import/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["node", "promise", "import", "prettier"],
+  "plugins": ["node", "promise", "import", "jest", "prettier"],
   "parserOptions": {
     "ecmaVersion": 12
   },
