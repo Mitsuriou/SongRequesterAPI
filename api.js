@@ -1,20 +1,20 @@
 // Modules import
-const http = require('http');
+const express = require('express');
+const app = express();
 
 // Local files import
 const requestDAO = require('./requestDAO');
 
-console.log('--- STARTING API... ---');
-
-// Quick HTTP server creation
-const server = http.createServer(async function (request, answer) {
-  if (request.method === 'GET') {
-    if (request.url === '/user' || request.url === '/user/') {
-      const lUsersList = await requestDAO.listUsers();
-      answer.end(JSON.stringify(lUsersList));
-    }
+app.get('/user', async (request, answer) => {
+  try {
+    const lUsersList = await requestDAO.listUsers();
+    answer.status(200).json(lUsersList);
+  } catch (error) {
+    console.log(error);
+    answer.status(500).json(error.message);
   }
 });
-server.listen(8080);
 
-console.log('--- API IS NOW RUNNING ---');
+app.listen(8080, function () {
+  console.log('--- API IS NOW RUNNING ---');
+});
