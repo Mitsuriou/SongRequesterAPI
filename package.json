@@ -18,11 +18,20 @@
   },
   "homepage": "https://github.com/Mitsuriou/SongRequesterAPI#readme",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
     "pg": "^8.5.1"
   },
   "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.2.1",
     "jest": "^26.6.3",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "prettier-eslint": "^12.0.0"
   }
 }
